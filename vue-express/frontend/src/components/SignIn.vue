@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <h1>Sign In</h1>
+        <h1>Create Name</h1>
         <div>
             <label for="name">Username: </label>
             <input

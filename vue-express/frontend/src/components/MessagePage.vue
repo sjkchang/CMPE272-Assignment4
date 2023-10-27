@@ -43,16 +43,24 @@ export default {
 </script>
 
 <template>
-    <div v-for="msg in messages" :key="msg.id">
-        <MessageComponent
-            class="message"
-            :browserUsername="userName"
-            :messageUsername="msg.userName"
-            :message="msg.text"
-            :timestamp="msg.timestamp"
-        />
+    <div class="message-list">
+        <div v-for="msg in messages" :key="msg.id">
+            <MessageComponent
+                class="message"
+                :browserUsername="userName"
+                :messageUsername="msg.userName"
+                :message="msg.text"
+                :timestamp="msg.timestamp"
+            />
+        </div>
     </div>
-    <input class="input" v-model="message" @keyup.enter="sendMessage" />
+
+    <input
+        class="input"
+        v-model="message"
+        @keyup.enter="sendMessage"
+        placeholder="Enter Message"
+    />
 </template>
 
 <style>
@@ -61,13 +69,9 @@ export default {
     margin: 10px 0;
     padding: 5px;
 }
-.message {
-    margin: 10px 0;
-    padding: 5px;
-    border: 1px solid black;
-    background-color: lightblue;
-}
-.owner {
-    background-color: grey;
+
+.message-list {
+    display: flex;
+    flex-direction: column;
 }
 </style>

@@ -33,7 +33,36 @@ export default {
 </script>
 
 <template>
-    <div class="message" v-bind:class="owner ? 'owner' : ''">
-        {{ messageUsername }} - {{ message }} - {{ timestamp }}
+    <div class="message" v-bind:class="owner ? 'ownerFloat' : ''">
+        <div class="message-box" v-bind:class="owner ? 'ownerColor' : ''">
+            {{ message }}
+        </div>
+        {{ messageUsername }} -
+        {{ new Date(timestamp).toLocaleString() }}
     </div>
 </template>
+
+<style>
+.message-box {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.ownerColor {
+    background-color: grey;
+}
+
+.ownerFloat {
+    float: right;
+}
+</style>
