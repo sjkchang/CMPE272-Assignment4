@@ -1,3 +1,6 @@
+# Report 
+[Report](https://github.com/sjkchang/CMPE272-Assignment4/blob/master/Assignment%204%20-%20Report.pdf)
+
 # Testing the applications
 
 ## Install Docker
