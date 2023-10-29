@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, send
 
 appFlask = Flask(__name__)
-socketio = SocketIO(appFlask)
+socketio = SocketIO(appFlask, cors_allowed_origins="*")
 
 @appFlask.route('/')
 def index():
